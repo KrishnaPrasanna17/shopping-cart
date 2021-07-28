@@ -1,11 +1,22 @@
-import React from 'react'
+import {CartState} from "../context/Context";
+import SingleProduct from "./SingleProduct";
 
-function Home() {
-    return (
-        <div>
-            Home
+const Home = () => {
+    const {
+        state: { products },
+    } = CartState();
+    console.log(products);
+     
+    return <div className="home">
+
+        <div className="productContainer">
+            {
+                products.map((prod) => {
+                  return  <SingleProduct prod = {prod} key={prod.id} />;
+                })
+            }
         </div>
-    )
-}
 
-export default Home
+    </div>
+    }
+    export default Home;
