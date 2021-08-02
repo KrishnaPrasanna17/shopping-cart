@@ -3,6 +3,7 @@ import faker from 'faker';
 import {CartReducer} from './Reducers';
 
 const Cart = createContext();
+faker.seed(99) //seed renders only one type of data
 
 const Context = ({ children}) => {
 

@@ -1,10 +1,10 @@
 import { Button, Form } from "react-bootstrap";
-import { CartState } from "../context/Context";
+//import { CartState } from "../context/Context";
 import Rating from "./Rating";
 import { useState } from "react";
 
 const Filters = () => {
-  const [rate, setRate] = useState(3);
+  const [rate, setRate] = useState(3); //num of stars which are marked
 
   // make state for rating
 
@@ -49,9 +49,11 @@ const Filters = () => {
       </span>
       <span>
         <label style={{ paddingRight: 10 }}>Rating: </label>
-        {/* <Rating
-          rating={byRating}
-          onClick={(i) =>
+        <Rating
+          rating={rate} 
+          onClick={(i) => setRate(i+1)}   
+          style={{cursor: "pointer"}} />
+         {/* onClick={(i) =>
             productDispatch({
               type: "FILTER_BY_RATING",
               payload: i + 1,
